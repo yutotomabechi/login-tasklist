@@ -15,9 +15,9 @@
   </aside>
   <div class="col-xs-8">
     <ul class="nav nav-tabs nav-justified">
-      <li>
-        <%= link_to 'CREATE Tasklist', tasks_path, class: 'btn btn-lg btn-primary' %>
-</li>
+      <div class="col-xs-8">
+      <%= render 'tasks/tasks', tasks: @tasks, user: @user %>
+    </div>
     </ul>
   </div>
 </div>
