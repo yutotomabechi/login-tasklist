@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy,:edit,:show]
-  before_action :set_task, only: [:show, :edit, :update,]
+  before_action :set_task, only: [:show,:edit, :update]
    
    
    
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
      end
 
   def show
-      
+   
   end
 
   def new
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-      
+    
   end
 
   def update
@@ -69,6 +69,7 @@ class TasksController < ApplicationController
   def correct_user
     @task = current_user.tasks.find_by(id: params[:id])
     unless @task
+    flash[:danger] = 'ユーザ以外は参照できません'
       redirect_to root_path
     end
   end
