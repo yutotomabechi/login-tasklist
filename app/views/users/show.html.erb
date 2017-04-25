@@ -19,5 +19,7 @@
       <%= render 'tasks/tasks', tasks: @tasks, user: @user %>
     </div>
     </ul>
+    
   </div>
 </div>
+<%= link_to 'Go to tasklist', tasks_path, class: 'btn btn-lg btn-primary' %>
